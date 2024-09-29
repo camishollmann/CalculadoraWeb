@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<html>
+
+<head>
+    <title>Exercício 3 - Calculadora</title>
+    <style>
+        button:active{
+            background-color: #EE5000;
+        }
+        .operacao{
+            background-color: #FF8000;
+            width: 37px;
+            height: 37px;
+            color: white;
+            border: solid #CCC 1px; 
+            font-size: 14px;
+        }
+        .inputbox{
+            padding: 10px;
+            /* O size: 3 não atendeu ao requisito do enunciado. */
+            width: 50px;
+            height: 37px;
+            margin: 2px;
+            background-color: #EEE;
+            border: solid #CCC 1px; 
+        }
+        .outputbox{
+            padding: 10px;
+            height: 37px;
+            border: solid #CCC 1px; 
+            width: 110px;
+        }
+        .limpar{
+            background-color: #FF8000;
+            font-size: 10px;
+            width: 50px;
+            height: 37px;
+            border: solid #CCC 1px; 
+            font-size: 10px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <input class="inputbox" id="campo1" type="number">
+    <input class="inputbox" id="campo2" type="number">
+    <button class="operacao" onclick="soma()">+</button>
+    <span style="font-weight: bold;">=</span>
+    <input class="outputbox" placeholder="Resultado" id="resultado1" type="text">
+    <button class="limpar" onclick="limpa1()">Limpar</button>
+    <br>
+    <input class="inputbox" id="campo3" type="number">
+    <input class="inputbox" id="campo4" type="number">
+    <button class="operacao" onclick="subtrai()">-</button>
+    <span style="font-weight: bold;">=</span>
+    <input class="outputbox" placeholder="Resultado" id="resultado2" type="text">
+    <button class="limpar" onclick="limp2()">Limpar</button>
+    <br>
+    <input class="inputbox" id="campo5" type="number">
+    <input class="inputbox" id="campo6" type="number">
+    <button class="operacao" onclick="multiplica()">*</button> 
+    <span style="font-weight: bold;">=</span>
+    <input class="outputbox" placeholder="Resultado" id="resultado3" type="text">
+    <button class="limpar" onclick="limpa3()">Limpar</button>
+    <br>
+    <input class="inputbox" id="campo7" type="number">
+    <input class="inputbox" id="campo8" type="number">
+    <button class="operacao" onclick="divide()">/</button>
+    <span style="font-weight: bold;">=</span>
+    <input class="outputbox" placeholder="Resultado" id="resultado4" type="text">
+    <button class="limpar" onclick="limpa4()">Limpar</button>
+
+
+    <script>
+        function soma() {
+            var valor1 = document.getElementById("campo1").value;
+            var valor2 = document.getElementById("campo2").value;  
+
+            document.getElementById("resultado1").value = (parseInt(valor1) + parseInt(valor2));
+        }
+        function subtrai() {
+            var valor1 = document.getElementById("campo3").value;
+            var valor2 = document.getElementById("campo4").value;
+
+            document.getElementById("resultado2").value = (parseInt(valor1) - parseInt(valor2));
+        }
+        function multiplica() {
+            var valor1 = document.getElementById("campo5").value;
+            var valor2 = document.getElementById("campo6").value;
+
+            document.getElementById("resultado3").value = (parseInt(valor1) * parseInt(valor2));
+        }
+        function divide() {
+            var valor1 = document.getElementById("campo7").value;
+            var valor2 = document.getElementById("campo8").value;
+
+            document.getElementById("resultado4").value = (parseInt(valor1) / parseInt(valor2));
+        }
+        function limpa1(){
+            document.getElementById("campo1").value = "";
+            document.getElementById("campo2").value = "";
+            document.getElementById("resultado1").value = "";
+        }
+        function limpa2(){
+            document.getElementById("campo3").value = "";
+            document.getElementById("campo4").value = "";
+            document.getElementById("resultado2").value = "";
+        }
+        function limpa3(){
+            document.getElementById("campo5").value = "";
+            document.getElementById("campo6").value = "";
+            document.getElementById("resultado3").value = "";
+        }
+        function limpa4(){
+            document.getElementById("campo7").value = "";
+            document.getElementById("campo8").value = "";
+            document.getElementById("resultado4").value = "";
+        }
+    </script>
+</body>
+
+</html>
